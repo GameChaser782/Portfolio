@@ -1,5 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-.dark-mode {
-    background-color: black;
-    color: white;
-  }
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong');
+.titlename{
+    font-family: "Trirong", serif;
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: greenyellow;
+}
+.center{
+    text-align: center;
+}
+.myphoto{
+  height: 150px;
+  width: 150px;
+  margin-bottom: 50px;
+  margin-left: 175px;
+}
+[data-theme="dark"] {
+  background-color: #111 !important;
+  color: #eee;
+}
+
+[data-theme="dark"] .bg-black {
+  background-color: #fff !important;
+}
+
+[data-theme="dark"] .bg-dark {
+  background-color: #eee !important;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: #222 !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: #000 !important;
+}
