@@ -1,41 +1,136 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong');
-.titlename{
-    font-family: "Trirong", serif;
-    font-size: 50px;
-    margin-bottom: 20px;
-    color: greenyellow;
-}
-.center {
-  text-align: center;
-}
-.myphoto{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-[data-theme="dark"] {
-  background-color: #111 !important;
-  color: #eee;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background-color 0.5s;
 }
 
-[data-theme="dark"] .bg-black {
-  background-color: #fff !important;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-[data-theme="dark"] .bg-dark {
-  background-color: #eee !important;
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
 }
 
-[data-theme="dark"] .bg-light {
-  background-color: #222 !important;
+.dark-mode-toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin: 10px;
 }
 
-[data-theme="dark"] .bg-white {
-  background-color: #000 !important;
+.dark-mode-toggle input[type="checkbox"] {
+  display: none;
 }
-/* For mobile phones: */
-[class*="col-"] {
-  width: 100%;
+
+.dark-mode-toggle label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.dark-mode-toggle label:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  content: "";
+  transition: transform 0.5s;
+}
+
+.dark-mode-toggle input[type="checkbox"]:checked + label:before {
+  transform: translateX(20px);
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content p {
+  margin-bottom: 20px;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.content ul li {
+  margin-bottom: 10px;
+}
+
+.content ul li:before {
+  content: "•";
+  margin-right: 10px;
+}
+
+.content ul ul {
+  margin-left: 20px; /* or padding-left: 20px; */
+}
+
+/* added dark mode styles */
+body[data-theme="dark"] {
+  background-color: #333;
+  color: #fff;
+}
+
+body[data-theme="dark"] .content {
+  color: #fff;
+}
+
+body[data-theme="dark"] .dark-mode-toggle label {
+  background-color: #666;
+}
+
+body[data-theme="dark"] .dark-mode-toggle label:before {
+  background-color: #fff;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #23527c;
+  text-decoration: underline;
+}
+
+a[target="_blank"] {
+  padding-right: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23337ab7' d='M18 12L12 18M12 18L6 12M12 18L12 6'/%3E%3C/svg%3E");
+  background-size: 16px 16px;
+  background-position: right center;
+  background-repeat: no-repeat;
 }
